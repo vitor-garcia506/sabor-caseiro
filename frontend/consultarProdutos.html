@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Caseiro - Consulte os Produtos</title>
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/consultarProdutos.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/principal.js" defer></script>
+    <script src="js/consultarProdutos.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="img/logotipo.svg" alt="Logotipo do Sabor Caseiro" class="logotipo">
+        <h1 class="tituloPrincipal">Sabor Caseiro</h1>
+    </header>
+    <nav class="navegacao">
+        <div id="areaLinksNavegacao">
+            <a href="index.html" class="linkNavegacao">
+                <i class="bi bi-plus-square"></i> Cadastrar Produto
+            </a>
+        </div>
+        <i class="bi bi-list" id="iconeMenu"></i>
+    </nav>
+    <main class="conteudoPrincipal">
+        <h2 class="tituloConteudoPrincipal">
+            Consulte os Produtos <i class="bi bi-search"></i>
+        </h2>
+        <div class="areaEntradaDados">
+            <label for="campoPesquisa" class="rotulo">Pesquisar:</label>
+            <input type="search" id="campoPesquisa" class="campoEntradaDados" placeholder="Informe o nome, tipo ou preço do produto">
+        </div>
+        <div class="areaTabelaProdutos">
+            <table id="tabelaProdutos">
+                <thead class="cabecalhoTabela">
+                    <tr class="linhaTabela">
+                        <th class="tituloTabela">Nome</th>
+                        <th class="tituloTabela">Tipo</th>
+                        <th class="tituloTabela">Preço</th>
+                        <th class="tituloTabela">Editar</th>
+                        <th class="tituloTabela">Deletar</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    <tr class="linhaTabela">
+                        <td class="dadoTabela">Coxinha</td>
+                        <td class="dadoTabela">Aperitivo</td>
+                        <td class="dadoTabela">R$ 5,00</td>
+                        <td class="dadoTabela">
+                            <a href="#" class="linkEditarProduto">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                        </td>
+                        <td class="dadoTabela">
+                            <a href="#" class="linkDeletarProduto">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="linhaTabela">
+                        <td class="dadoTabela">Macarrão</td>
+                        <td class="dadoTabela">Prato Principal</td>
+                        <td class="dadoTabela">R$ 25,00</td>
+                        <td class="dadoTabela">
+                            <a href="#" class="linkEditarProduto">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                        </td>
+                        <td class="dadoTabela">
+                            <a href="#" class="linkDeletarProduto">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="linhaTabela">
+                        <td class="dadoTabela">Sorvete</td>
+                        <td class="dadoTabela">Sobremesa</td>
+                        <td class="dadoTabela">R$ 4,00</td>
+                        <td class="dadoTabela">
+                            <a href="#" class="linkEditarProduto">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                        </td>
+                        <td class="dadoTabela">
+                            <a href="#" class="linkDeletarProduto">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="linhaTabela">
+                        <td class="dadoTabela">Refrigerante</td>
+                        <td class="dadoTabela">Bebida</td>
+                        <td class="dadoTabela">R$ 7,00</td>
+                        <td class="dadoTabela">
+                            <a href="#" class="linkEditarProduto">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                        </td>
+                        <td class="dadoTabela">
+                            <a href="#" class="linkDeletarProduto">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="semResultados">Sem resultados.</p>
+        </div>
+    </main>
+    <div id="areaModal">
+        <div class="modal">
+            <p id="mensagemModal"></p>
+            <button type="button" id="botaoFecharModal">
+                Fechar <i class="bi bi-x-square"></i>
+            </button>
+        </div>
+    </div>
+    <footer class="rodape">
+        <p class="direitosAutorais">
+            Desenvolvido por <a href="https://github.com/vitorGarcia506" target="_blank" class="linkDireitosAutorais">Vitor Souza</a> &copy; 2024
+        </p>
+    </footer>
+</body>
+</html>
