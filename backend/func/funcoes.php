@@ -34,31 +34,6 @@
         return array("Sucesso", null);
     }
 
-    function selecionarTipo($tipo){
-        $tipos = array("aperitivo" => "", "pratoPrincipal" => "", "sobremesa" => "", "bebida" => "");
-
-        switch($tipo){
-            case "aperitivo":
-            case "Aperitivo":
-                $tipos["aperitivo"] = "selected";
-                break;
-            case "pratoPrincipal":
-            case "Prato Principal":
-                $tipos["pratoPrincipal"] = "selected";
-                break;
-            case "sobremesa":
-            case "Sobremesa":
-                $tipos["sobremesa"] = "selected";
-                break;
-            case "bebida":
-            case "Bebida":
-                $tipos["bebida"] = "selected";
-                break;
-        }
-
-        return $tipos;
-    }
-
     function formatarTipo($tipo){
         switch($tipo){
             case "aperitivo":
