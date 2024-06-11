@@ -6,6 +6,24 @@
     $mensagemConclusao = $classeAtivo = "";
 
     if(isset($_SESSION["id"])){
+        if(isset($_REQUEST["editarProduto"])){
+            $nome = sanitizarValores($_REQUEST["nome"] ?? "");
+            $tipo = sanitizarValores($_REQUEST["tipo"] ?? "");
+            $preco = sanitizarValores($_REQUEST["preco"] ?? "");
+            $validarDados = validarDados($nome, $tipo, $preco);
+    
+            if($validarDados[0] === "Sucesso"){
+                $_SESSION["nome"] = $nome;
+                $_SESSION["tipo"] = $tipo;
+                $_SESSION["preco"] = $preco;
+                header("Location: processarEdicaoProduto.php");
+                exit;
+            }else{
+                $mensagemConclusao = $validarDados[0];
+                $classeAtivo = "class=\"ativo\"";
+            }
+         }
+        
         $id = $_SESSION["id"];
         $servidor = "localhost";
         $usuario = "root";
@@ -18,24 +36,6 @@
             $stmt->execute(array($id));
 
             if($stmt->rowCount() > 0){
-                if(isset($_REQUEST["editarProduto"])){
-                    $nome = sanitizarValores($_REQUEST["nome"] ?? "");
-                    $tipo = sanitizarValores($_REQUEST["tipo"] ?? "");
-                    $preco = sanitizarValores($_REQUEST["preco"] ?? "");
-                    $validarDados = validarDados($nome, $tipo, $preco);
-            
-                    if($validarDados[0] === "Sucesso"){
-                        $_SESSION["nome"] = $nome;
-                        $_SESSION["tipo"] = $tipo;
-                        $_SESSION["preco"] = $preco;
-                        header("Location: processarEdicaoProduto.php");
-                        exit;
-                    }else{
-                        $mensagemConclusao = $validarDados[0];
-                        $classeAtivo = "class=\"ativo\"";
-                    }
-                }
-
                 while($linha = $stmt->fetch()){
                     $nome = $linha["nomeProduto"];
                     $tipo = $linha["tipoProduto"];
