@@ -1,0 +1,46 @@
+#formPesqProdutos {
+  margin-bottom: 1.2rem;
+}
+
+#containerTabelaProdutos {
+  overflow-x: scroll;
+  padding-bottom: 1.2rem;
+}
+
+table {
+  white-space: nowrap;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  color: #fff;
+  background-color: var(--corPrimaria);
+  padding: 0.7rem;
+}
+
+#corpoTabela tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+td {
+  text-align: center;
+  padding: 0.7rem;
+}
+
+.linkEditarProduto {
+  display: inline-block;
+  text-decoration: none;
+  color: #008000;
+}
+
+.botaoDeletarProduto {
+  font-family: inherit;
+  font-size: 1rem;
+  color: #ff0000;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
