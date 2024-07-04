@@ -1,0 +1,78 @@
+/* Conteúdo principal */
+.secao{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+#areaPesquisarProdutos{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+#areaTabelaProdutos{
+    overflow-x: scroll;
+    padding-bottom: 1.2rem;
+}
+
+table{
+    white-space: nowrap;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    color: #fff;
+    background-color: var(--corQuartenaria);
+    padding: .7rem;
+}
+
+#corpoTabelaProdutos tr:nth-child(even){
+    background-color: #ddd;
+}
+
+td{
+    text-align: center;
+    padding: .7rem;
+}
+
+.bi-pencil-fill{
+    color: #008000;
+    cursor: pointer;
+}
+
+.bi-trash-fill{
+    color: #ff0000;
+    cursor: pointer;
+}
+
+#semPesquisa{
+    display: none;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #aaa;
+}
+
+#secaoEditarProduto{
+    display: none;
+}
+
+#botaoCancelarEditarProduto{
+    font-family: inherit;
+    font-size: .9rem;
+    color: #fff;
+    background-color: #ff0000;
+    padding: .9rem 1.1rem;
+    border: .126rem solid transparent;
+    border-radius: .3rem;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#botaoCancelarEditarProduto:hover{
+    color: #ff0000;
+    background-color: transparent;
+    border-color: #ff0000;
+}
