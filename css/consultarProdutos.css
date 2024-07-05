@@ -1,0 +1,90 @@
+#containerTabelaProdutos {
+  overflow-x: scroll;
+  padding-bottom: 1.2rem;
+}
+
+table {
+  white-space: nowrap;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  color: #fff;
+  background-color: var(--corTerciaria);
+  padding: 0.7rem;
+}
+
+th:first-child {
+  border-top-left-radius: 0.3rem;
+}
+
+th:last-child {
+  border-top-right-radius: 0.3rem;
+}
+
+#corpoTabelaProdutos tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 0.3rem;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 0.3rem;
+}
+
+td {
+  text-align: center;
+  padding: 0.7rem;
+}
+
+.bi-pencil-fill {
+  color: #008000;
+  cursor: pointer;
+}
+
+.bi-trash-fill {
+  color: #ff0000;
+  cursor: pointer;
+}
+
+#semPesquisa {
+  display: none;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #aaa;
+}
+
+#secaoEdicaoProduto {
+  display: none;
+}
+
+.containerBotoesForm {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+#botaoCancelarEdicao {
+  flex: 1;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #ff0000;
+  width: auto;
+  padding: 0.9rem 1.1rem;
+  border: 0.126rem solid transparent;
+  border-radius: 0.3rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#botaoCancelarEdicao:hover {
+  color: #ff0000;
+  background-color: transparent;
+  border-color: #ff0000;
+}
