@@ -57,32 +57,38 @@ const validarFormularioCadastro = (e) => {
   const tipo = elementoTipo.value.trim();
   const preco = elementoPreco.value.trim();
 
-  // if(!nome || nome.length > 30){
-  //     abrirModal("O nome do produto é obrigatório e deve conter até 30 caracteres.")
-  //     elementoNome.value = ""
-  //     return
-  // }
+  if (!nome || nome.length > 30) {
+    abrirModal(
+      "O nome do produto é obrigatório e deve conter até 30 caracteres."
+    );
+    elementoNome.value = "";
+    return;
+  }
 
-  // switch(tipo){
-  //     case "aperitivo":
-  //         break
-  //     case "pratoPrincipal":
-  //         break
-  //     case "sobremesa":
-  //         break
-  //     case "bebida":
-  //         break
-  //     default:
-  //         abrirModal("O tipo do produto é obrigatório e deve ser válido. Valores aceitos: \"Aperitivo\", \"Prato Principal\", \"Sobremesa\", \"Bebida\".")
-  //         elementoTipo.value = ""
-  //         return
-  // }
+  switch (tipo) {
+    case "aperitivo":
+      break;
+    case "pratoPrincipal":
+      break;
+    case "sobremesa":
+      break;
+    case "bebida":
+      break;
+    default:
+      abrirModal(
+        'O tipo do produto é obrigatório e deve ser válido. Valores aceitos: "Aperitivo", "Prato Principal", "Sobremesa", "Bebida".'
+      );
+      elementoTipo.value = "";
+      return;
+  }
 
-  // if(!preco || isNaN(preco) || preco < 1 || preco > 999.99){
-  //     abrirModal("O preço do produto é obrigatório e deve ser válido. Valores aceitos: Números de 1 a 999,99.")
-  //     elementoPreco.value = ""
-  //     return
-  // }
+  if (!preco || isNaN(preco) || preco < 1 || preco > 999.99) {
+    abrirModal(
+      "O preço do produto é obrigatório e deve ser válido. Valores aceitos: Números de 1 a 999,99."
+    );
+    elementoPreco.value = "";
+    return;
+  }
 
   cadastrarProduto(nome, tipo, preco);
 };
