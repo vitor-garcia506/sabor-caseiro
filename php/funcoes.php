@@ -22,6 +22,7 @@ function efetuarConexao()
         return $pdo;
     } catch (PDOException $e) {
         echo json_encode(array("erro" => $e->getMessage()));
+        exit;
     }
 }
 
@@ -38,6 +39,7 @@ function verificarProdutoCadastrado($pdo, $nome, $tipo)
         }
     } catch (PDOException $e) {
         echo json_encode(array("erro" => $e->getMessage()));
+        exit;
     }
 }
 
@@ -45,5 +47,6 @@ function validarId($id)
 {
     if (empty($id) && $id !== "0" || !is_numeric($id) || $id < 1) {
         echo json_encode(array("erro" => "O ID do produto é obrigatório e deve ser válido. Valores aceitos: Números a partir de 1."));
+        exit;
     }
 }

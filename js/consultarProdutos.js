@@ -26,7 +26,7 @@ const carregarProdutos = () => {
         localStorage.setItem("mensagem", dados.erro);
         window.location.href = "index.html";
       } else {
-        dados.forEach((produto) => {
+        dados[0].forEach((produto) => {
           const template = document.createElement("template");
           const idProduto = produto.idProduto;
           const nomeProduto = produto.nomeProduto;
@@ -116,7 +116,7 @@ const prepararEdicao = (iconeEditar) => {
       campoNovoTipo.value = "bebida";
   }
 
-  let preco = celulaPreco.innerText.replace("R$", "").replace(",", ".");
+  let preco = Number(celulaPreco.innerText.replace("R$", "").replace(",", "."));
 
   if (!Number.isInteger(preco)) {
     preco = Number(preco).toFixed(2);
