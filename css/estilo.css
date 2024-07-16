@@ -127,9 +127,6 @@ form {
 }
 
 #fade {
-  display: none;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -137,9 +134,15 @@ form {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.secaoModal {
+#secaoModal {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -148,6 +151,7 @@ form {
   max-width: 90%;
   padding: 1.2rem;
   border-radius: 0.3rem;
+  transition: top 0.5s ease-in-out;
 }
 
 h3 {

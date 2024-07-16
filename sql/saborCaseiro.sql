@@ -1,6 +1,6 @@
-drop database if exists saborcaseiro;
-create database saborcaseiro;
-use saborcaseiro;
+drop database if exists saborCaseiro;
+create database saborCaseiro;
+use saborCaseiro;
 
 drop table if exists produtos;
 create table produtos (
@@ -11,56 +11,56 @@ create table produtos (
     primary key (id)
 );
 
-drop view if exists viewprodutos;
-create view viewprodutos as
+drop view if exists viewProdutos;
+create view viewProdutos as
 select
-    id as idproduto,
-    nome as nomeproduto,
-    tipo as tipoproduto,
-    preco as precoproduto
+    id as idProduto,
+    nome as nomeProduto,
+    tipo as tipoProduto,
+    preco as precoProduto
 from produtos;
 
 delimiter //
 
-drop procedure if exists proccadastrarproduto //
-create procedure proccadastrarproduto (
-    in procnome varchar(30),
-    in proctipo enum("Aperitivo", "Prato Principal", "Sobremesa", "Bebida"),
-    in procpreco decimal(5, 2)
+drop procedure if exists procCadastrarProduto //
+create procedure procCadastrarProduto (
+    in procNome varchar(30),
+    in procTipo enum("Aperitivo", "Prato Principal", "Sobremesa", "Bebida"),
+    in procPreco decimal(5, 2)
 )
 begin
-    insert into produtos (nome, tipo, preco) values (procnome, proctipo, procpreco);
+    insert into produtos (nome, tipo, preco) values (procNome, procTipo, procPreco);
 end //
 
-drop procedure if exists procverificarprodutocadastrado //
-create procedure procverificarprodutocadastrado (
-    in procnome varchar(30),
-    in proctipo enum("Aperitivo", "Prato Principal", "Sobremesa", "Bebida")
+drop procedure if exists procVerificarProdutoCadastrado //
+create procedure procVerificarProdutoCadastrado (
+    in procNome varchar(30),
+    in procTipo enum("Aperitivo", "Prato Principal", "Sobremesa", "Bebida")
 )
 begin
-    select nome as nomeproduto, tipo as tipoproduto
+    select nome as nomeProduto, tipo as tipoProduto
     from produtos
-    where nome = procnome and tipo = proctipo;
+    where nome = procNome and tipo = procTipo;
 end //
 
-drop procedure if exists proceditarproduto //
-create procedure proceditarproduto (
-    in procid int,
-    in procnome varchar(30),
-    in proctipo enum("Aperitivo", "Prato Principal", "Sobremesa", "Bebida")
+drop procedure if exists procEditarProduto //
+create procedure procEditarProduto (
+    in procId int,
+    in procNome varchar(30),
+    in procTipo enum("Aperitivo", "Prato Principal", "Sobremesa", "Bebida")
 )
 begin
     update produtos
-    set nome = procnome, tipo = proctipo, preco = preco
-    where id = procid;
+    set nome = procNome, tipo = procTipo, preco = preco
+    where id = procId;
 end //
 
-drop procedure if exists procdeletarproduto //
-create procedure procdeletarproduto (
-    in procid int
+drop procedure if exists procDeletarProduto //
+create procedure procDeletarProduto (
+    in procId int
 )
 begin
-    delete from produtos where id = procid;
+    delete from produtos where id = procId;
 end //
 
 delimiter ;

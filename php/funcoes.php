@@ -10,9 +10,9 @@ function sanitizarValor($valor)
 
 function efetuarConexao()
 {
-    $servidor = "localhost";
+    $servidor = "localhost:3307";
     $usuario = "root";
-    $senha = "Great450@#";
+    $senha = "root";
     $nomeBanco = "saborCaseiro";
 
     try {

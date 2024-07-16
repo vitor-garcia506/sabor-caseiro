@@ -1,10 +1,13 @@
 const fade = document.querySelector("#fade");
+const secaoModal = document.querySelector("#secaoModal");
 const mensagemModal = document.querySelector("#mensagemModal");
 const botaoFecharModal = document.querySelector("#botaoFecharModal");
 
 const abrirModal = (mensagem) => {
   mensagemModal.innerText = mensagem;
-  fade.style.display = "flex";
+  fade.style.opacity = "1";
+  fade.style.pointerEvents = "all";
+  secaoModal.style.top = "50%";
 };
 
 const exibirMensagem = () => {
@@ -24,9 +27,15 @@ const definirDataAtual = () => {
   elementoDataAtual.innerText = anoAtual;
 };
 
+const ocultarFade = (e) => {
+  e.currentTarget.removeEventListener("transitionend", ocultarFade);
+  fade.style.opacity = "0";
+  fade.style.pointerEvents = "none";
+};
+
 const fecharModal = () => {
-  mensagemModal.innerText = "";
-  fade.style.display = "none";
+  secaoModal.style.top = "-100%";
+  secaoModal.addEventListener("transitionend", ocultarFade);
 };
 
 const detectarClique = (e) => {
@@ -41,8 +50,8 @@ const detectarTecla = (e) => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", exibirMensagem);
-document.addEventListener("DOMContentLoaded", definirDataAtual);
+window.addEventListener("load", exibirMensagem);
+window.addEventListener("load", definirDataAtual);
 document.addEventListener("click", detectarClique);
 document.addEventListener("keyup", detectarTecla);
 botaoFecharModal.addEventListener("click", fecharModal);

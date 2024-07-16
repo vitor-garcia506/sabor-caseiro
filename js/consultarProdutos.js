@@ -303,7 +303,7 @@ const validarFormularioEdicao = (e) => {
   editarProduto(id, novoNome, novoTipo, novoPreco);
 };
 
-document.addEventListener("DOMContentLoaded", carregarProdutos);
+window.addEventListener("load", carregarProdutos);
 campoPesquisa.addEventListener("input", pesquisarProdutos);
 corpoTabelaProdutos.addEventListener("click", detectarCliqueTabela);
 formEdicaoProduto.addEventListener("submit", validarFormularioEdicao);
